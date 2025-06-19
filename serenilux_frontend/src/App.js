@@ -14,6 +14,8 @@ function App() {
 
   return (
     <div className="app">
+      {/* Animated flowing gradient background */}
+      <div className="animated-bg-gradient" aria-hidden="true" />
       {showWelcome ? (
         <WelcomeScreen onStart={handleStart} />
       ) : (

@@ -19,6 +19,60 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Position relative for overlay layer */
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Animated flowing gradient background for entire app */
+.animated-bg-gradient {
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: serene-gradient-wave 28s ease-in-out infinite;
+  background: linear-gradient(120deg, #50E3C2 0%, #B494E8 60%, #F7CAC9 100%);
+  background-size: 250% 250%;
+  opacity: 0.88;
+  transition: opacity 1.2s;
+}
+
+@keyframes serene-gradient-wave {
+  0% {
+    background-position: 7% 43%;
+    filter: brightness(0.98) blur(0.5px);
+  }
+  12% {
+    background-position: 82% 40%;
+  }
+  24% {
+    background-position: 44% 57%;
+    filter: brightness(1.07) blur(1.2px);
+  }
+  36% {
+    background-position: 25% 86%;
+  }
+  50% {
+    background-position: 70% 18%;
+    filter: brightness(1.03) blur(0.9px);
+  }
+  62% {
+    background-position: 14% 24%;
+  }
+  74% {
+    background-position: 90% 58%;
+    filter: brightness(0.98) blur(0.5px);
+  }
+  88% {
+    background-position: 54% 12%;
+  }
+  100% {
+    background-position: 7% 43%;
+    filter: brightness(0.98) blur(0.5px);
+  }
 }
 
 .navbar {
