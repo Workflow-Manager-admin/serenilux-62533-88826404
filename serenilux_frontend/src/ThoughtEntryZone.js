@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./ThoughtEntryZone.css";
 import windSoft from "./assets/wind-soft.mp3";
 import whooshSoundAsset from "./assets/whoosh-1.mp3"; // Provide as asset
+import EmotionalReframeCard from "./EmotionalReframeCard";
 
 // PUBLIC_INTERFACE
 function ThoughtEntryZone() {
@@ -13,6 +14,9 @@ function ThoughtEntryZone() {
   const [shredParticles, setShredParticles] = useState([]);
   const [rippleActive, setRippleActive] = useState(false);
   const [bgBrighten, setBgBrighten] = useState(false);
+
+  // New: Control Emotional Reframe Card appearance
+  const [showReframe, setShowReframe] = useState(false);
 
   const windAudioRef = useRef(null);
   const whooshAudioRef = useRef(null);
@@ -48,8 +52,8 @@ function ThoughtEntryZone() {
 
   // For accessibility - focus textarea on mount (but not during shred)
   useEffect(() => {
-    if (!shredding) textareaRef.current && textareaRef.current.focus();
-  }, [shredding]);
+    if (!shredding && !showReframe) textareaRef.current && textareaRef.current.focus();
+  }, [shredding, showReframe]);
 
   // Helper: Ink animation span per letter
   const InkSpan = ({ char, idx }) => (
@@ -97,6 +101,7 @@ function ThoughtEntryZone() {
   const handleShred = () => {
     if (!input.trim() || shredding) return;
     setShredding(true);
+    setShowReframe(false); // Hide card if shown previously
     // Calculate position/size of animated box to emit from (centered on text box)
     const card = document.querySelector(".tezone-card");
     const box = card.getBoundingClientRect();
@@ -124,6 +129,7 @@ function ThoughtEntryZone() {
       setRippleActive(false);
       setBgBrighten(false);
       setShredding(false);
+      setShowReframe(true); // Show emotional reframe card
     }, 2250);
   };
 
@@ -243,6 +249,8 @@ function ThoughtEntryZone() {
         aria-hidden="true"
         tabIndex={-1}
       />
+      {/* Main input card (hide visually if reframe card showing) */}
+      {!showReframe && (
       <div
         className={`tezone-card${disableInput ? " tezone-disabled" : ""}`}
         style={{
@@ -330,6 +338,7 @@ function ThoughtEntryZone() {
           <span role="img" aria-label="shred">🧺</span> Shred It
         </button>
       </div>
+      )}
       {/* Subtle storm overlays */}
       <svg
         className="storm-overlay"
@@ -371,6 +380,12 @@ function ThoughtEntryZone() {
           filter="url(#noise)"
         />
       </svg>
+      {/* Emotional Reframe Card: floats in after shredding ritual */}
+      {showReframe && (
+        <EmotionalReframeCard
+          message="You are growing, even when it’s hard."
+        />
+      )}
     </div>
   );
 }

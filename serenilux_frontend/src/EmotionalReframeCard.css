@@ -1,0 +1,192 @@
+.ercard-root {
+  z-index: 120;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0; top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: auto;
+  /* transition for background fade in if desired */
+  background: none;
+}
+
+.ercard-floatin {
+  margin-top: 38px;
+  min-width: 300px;
+  max-width: 430px;
+  width: 98vw;
+  position: relative;
+  padding: 46px 18px 34px 18px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.33);
+  box-shadow:
+    0 8.5px 46px 0 rgba(44,74,124,0.15),
+    0 1.5px 22px 2.1px #89d9d914,
+    0 0.5px 2.0px 0px #fff6e6a2;
+  backdrop-filter: blur(17.5px) saturate(1.68) brightness(1.11);
+  border: 2px solid rgba(255,255,255,0.13);
+
+  animation: ercard-floatin 1.4s cubic-bezier(.52,1.7,.39,1.1) 0.15s both;
+  will-change: transform, opacity;
+  transform: translateY(-150px) scale(0.9);
+  opacity: 0;
+}
+
+.ercard-root .ercard-floatin {
+  animation: ercard-floatin 1.16s cubic-bezier(.52,1.85,.38,1.03) 0.33s both;
+}
+
+@keyframes ercard-floatin {
+  0% {
+    opacity: 0;
+    transform: translateY(-168px) scale(0.82) rotate(-6deg);
+    filter: blur(8px) brightness(1.4);
+  }
+  50% {
+    opacity: 0.84;
+    transform: translateY(19px) scale(1.04) rotate(1deg);
+    filter: blur(0.6px) brightness(1.12);
+  }
+  83% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.025) rotate(-1.5deg);
+    filter: blur(0.18px) brightness(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1.0) rotate(0deg);
+    filter: none;
+  }
+}
+
+.ercard-anim-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-top: -16px;
+}
+
+.ercard-plant-anim {
+  width: 82px;
+  height: 74px;
+  margin: 0 auto;
+  filter: drop-shadow(0 1.5px 8px #bdf9d6ab);
+  /* Soft plant outline in glow */
+  transition: filter 0.6s;
+}
+
+.ercard-stem {
+  stroke-dasharray: 74;
+  stroke-dashoffset: 74;
+  animation: ercard-stem-grow 1s cubic-bezier(.52,1.68,.47,1) 0.4s forwards;
+}
+
+@keyframes ercard-stem-grow {
+  0% { stroke-dashoffset: 74 }
+  80% { stroke-dashoffset: 0 }
+  100% { stroke-dashoffset: 0 }
+}
+
+.ercard-leaf {
+  opacity: 0;
+}
+
+.ercard-leaf-left {
+  animation: ercard-leafin-left 0.62s cubic-bezier(.47,1.63,.37,1.13) 1s forwards;
+}
+.ercard-leaf-right {
+  animation: ercard-leafin-right 0.61s cubic-bezier(.42,1.44,.45,1.08) 1.1s forwards;
+}
+
+@keyframes ercard-leafin-left {
+  0% { opacity: 0; transform: scale(0.48) translateY(-12px);}
+  50% { opacity: 0.85; }
+  100% { opacity: 1; transform: scale(1.07) translateY(0);}
+}
+@keyframes ercard-leafin-right {
+  0% { opacity: 0; transform: scale(0.42) translateY(-19px);}
+  62% { opacity: 0.8; }
+  100% { opacity: 1; transform: scale(1.04) translateY(0);}
+}
+
+.ercard-bud {
+  opacity: 0;
+  transform: scale(0.43);
+  animation: ercard-bud-pop 0.66s cubic-bezier(.36,1.45,.36,1.19) 1.42s forwards;
+}
+
+@keyframes ercard-bud-pop {
+  0% { opacity: 0; transform: scale(0.35);}
+  44% { opacity: 0.72; transform: scale(1.13);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+
+.ercard-message {
+  margin-top: -2px;
+  margin-bottom: 26px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ercard-message-text {
+  font-family: "Pacifico", "Caveat", "Homemade Apple", "Comic Sans MS", "cursive";
+  font-size: 1.36rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #207b52;
+  text-shadow:
+    0 2.4px 11px #bbeac066,
+    0 0.7px 4px #acefe5a8,
+    0 1.2px 0 #76b59a44;
+  filter: drop-shadow(0 0.7px 3px #aef2aa58);
+  user-select: text;
+}
+
+.ercard-voice-btn.btn {
+  background: linear-gradient(111deg, #c7fffa 0%, #e0d8f8 77%, #fff2df 100%);
+  color: #2a3e2e;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 22px;
+  padding: 9px 22px 8px 15px;
+  min-width: 0;
+  border: none;
+  margin: 0 auto;
+  box-shadow: 0 0px 24px 0 #7beddb22;
+  outline: 2px solid rgba(191, 236, 251, 0.13);
+  cursor: pointer;
+  transition: background 0.23s, color 0.21s;
+  display: flex;
+  align-items: center;
+}
+.ercard-voice-btn.btn:hover, .ercard-voice-btn.btn:focus-visible {
+  background: linear-gradient(107deg, #d0ffe4 6%, #ede0fa 70%, #fff8e6 100%);
+  color: #217b6c;
+}
+
+.ercard-speaking .ercard-voice-btn.btn {
+  background: linear-gradient(98deg,#e1fffb 0%, #d2f8ed 60%, #fff8e6 100%);
+  color: #237848;
+  box-shadow: 0 0px 20px 2px #5bd18e3a;
+  outline: 2.5px solid #baf8d399;
+}
+
+@media (max-width: 599px) {
+  .ercard-floatin {
+    padding: 28px 4px 27px 4px !important;
+    min-width: 0;
+    width: 96vw;
+    font-size: 0.98rem;
+  }
+  .ercard-message-text {
+    font-size: 1.075rem;
+  }
+}
