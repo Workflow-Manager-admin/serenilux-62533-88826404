@@ -7,35 +7,56 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.39 MiB [emitted] (name: main)
+asset bundle.js 1.41 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
 modules by path ./node_modules/ 1.24 MiB 31 modules
-modules by path ./src/ 10.2 KiB
-  modules by path ./src/*.css 7.49 KiB 4 modules
-  modules by path ./src/*.js 2.76 KiB
+modules by path ./src/ 21.5 KiB
+  modules by path ./src/*.css 13.9 KiB 6 modules
+  modules by path ./src/*.js 7.56 KiB
     ./src/index.js 530 bytes [built] [code generated]
-    ./src/App.js 2.24 KiB [built] [code generated]
+    + 2 modules
 modules by path ./.ve/ 15.1 KiB
   modules by path ./.ve/*.js 10.6 KiB 2 modules
   modules by path ./.ve/*.css 2.93 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1306 ms
+webpack 5.99.9 compiled successfully in 1247 ms
 assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.44 MiB
+assets by path *.js 1.42 MiB
   asset bundle.js 1.41 MiB [emitted] (name: main)
-  asset main.6891a509478328733883.hot-update.js 25.2 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.6891a509478328733883.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.44 MiB = bundle.js 1.41 MiB main.6891a509478328733883.hot-update.js 25.2 KiB
-cached modules 1.26 MiB [cached] 41 modules
+  asset main.aa8e6fca9ac68c2b4529.hot-update.js 5.18 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.aa8e6fca9ac68c2b4529.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.42 MiB = bundle.js 1.41 MiB main.aa8e6fca9ac68c2b4529.hot-update.js 5.18 KiB
+cached modules 1.27 MiB [cached] 44 modules
 runtime modules 27.5 KiB 14 modules
-javascript modules 13.5 KiB
-  modules by path ./src/*.js 7.05 KiB
-    ./src/App.js 2.84 KiB [built] [code generated]
-    ./src/WelcomeScreen.js 4.2 KiB [built] [code generated]
-  modules by path ./src/*.css 6.42 KiB
-    ./src/WelcomeScreen.css 2.25 KiB [built] [code generated]
-    ./node_modules/css-loader/dist/cjs.js!./src/WelcomeScreen.css 4.17 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 164 ms
+./src/App.js 2.38 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 101 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.dfddc5267a36dea009bf.hot-update.js 28.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.dfddc5267a36dea009bf.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.43 MiB main.dfddc5267a36dea009bf.hot-update.js 28.5 KiB
+cached modules 1.27 MiB [cached] 44 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 14.8 KiB
+  modules by path ./src/*.js 8.67 KiB
+    ./src/App.js 2.43 KiB [built] [code generated]
+    ./src/ThoughtEntryZone.js 6.24 KiB [built] [code generated]
+  modules by path ./src/*.css 6.05 KiB
+    ./src/ThoughtEntryZone.css 2.26 KiB [built] [code generated]
+    ./node_modules/css-loader/dist/cjs.js!./src/ThoughtEntryZone.css 3.79 KiB [built] [code generated]
+  ./src/assets/wind-soft.mp3 81 bytes [built] [code generated] [1 error]
+
+ERROR in ./src/assets/wind-soft.mp3 1:0
+Module parse failed: Unexpected token (1:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> <binary placeholder: gentle looping wind sound for ambient effect as user types>
+| 
+ @ ./src/ThoughtEntryZone.js 3:0-46 71:11-19
+ @ ./src/App.js 4:0-50 63:40-56
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 103 ms

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import WelcomeScreen from "./WelcomeScreen";
+import ThoughtEntryZone from "./ThoughtEntryZone";
 
 function App() {
   // Manage screen state; future: swap WelcomeScreen for main app after Start Detox
@@ -28,16 +29,16 @@ function App() {
             </div>
           </div>
         </nav>
-        <main>
-          <div className="container">
-            <div className="hero">
-              <div className="subtitle">AI Workflow Manager Template</div>
-              <h1 className="title">serenilux_frontend</h1>
-              <div className="description">
-                Start building your application.
-              </div>
-              <button className="btn btn-large">Button</button>
-            </div>
+        {/* Main app UI */}
+        <main style={{ minHeight: "100vh" }}>
+          {/* Thought Entry Zone replaces hero UI */}
+          <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+            <React.Suspense fallback={null}>
+              {/*
+                The ThoughtEntryZone component handles its own centering and backdrop.
+              */}
+              <ThoughtEntryZone />
+            </React.Suspense>
           </div>
         </main>
         </>
