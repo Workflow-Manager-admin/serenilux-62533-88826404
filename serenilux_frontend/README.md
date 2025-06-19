@@ -45,6 +45,16 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Customization
 
+### Environment Variables for Static Assets (Audio/Sounds)
+
+For Create React App (default for this template), reference static audio assets using:
+```js
+new Audio(process.env.REACT_APP_PUBLIC_URL + '/sounds/your-audio.mp3')
+```
+- If `REACT_APP_PUBLIC_URL` is not set in `.env`, CRA falls back to `process.env.PUBLIC_URL`.
+- Place your audio assets in `public/sounds/`.  
+- For Vite (not used here), see Vite docs for `import.meta.env`.
+
 ### Colors
 
 The main brand colors are defined as CSS variables in `src/App.css`:

@@ -7,88 +7,50 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.47 MiB [emitted] (name: main)
+asset bundle.js 1.46 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
 cacheable modules 1.31 MiB
   modules by path ./node_modules/ 1.24 MiB 31 modules
   modules by path ./src/ 55.4 KiB
     modules by path ./src/*.css 27.9 KiB 10 modules
-    modules by path ./src/*.js 27.4 KiB 5 modules
-    modules with errors 111 bytes [true errors]
-      ./src/assets/wind-soft.mp3 81 bytes [built] [code generated] [1 error]
-      ./src/assets/whoosh-1.mp3 30 bytes [built] [code generated] [1 error]
+    modules by path ./src/*.js 27.5 KiB
+      ./src/index.js 530 bytes [built] [code generated]
+      + 4 modules
   modules by path ./.ve/ 15.1 KiB
     modules by path ./.ve/*.js 10.6 KiB 2 modules
-    modules by path ./.ve/*.css 2.93 KiB 2 modules
+    modules by path ./.ve/*.css 2.93 KiB
+      ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
+      ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
     ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-
-ERROR in ./src/assets/whoosh-1.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <PLACEHOLDER_WHOOSH_MP3_DATA>
-| 
- @ ./src/ThoughtEntryZone.js 4:0-53 240:11-27
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-ERROR in ./src/assets/wind-soft.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <binary placeholder: gentle looping wind sound for ambient effect as user types>
-| 
- @ ./src/ThoughtEntryZone.js 3:0-46 235:11-19
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-webpack 5.99.9 compiled with 2 errors in 1453 ms
+webpack 5.99.9 compiled successfully in 1457 ms
 assets by status 1.98 KiB [cached] 1 asset
 assets by path *.js 1.48 MiB
   asset bundle.js 1.46 MiB [emitted] (name: main)
-  asset main.d77436d22533c634e002.hot-update.js 20 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.d77436d22533c634e002.hot-update.json 84 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.d77436d22533c634e002.hot-update.js 20 KiB
+  asset main.25d351676aa7df5d95cf.hot-update.js 20.1 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.25d351676aa7df5d95cf.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.25d351676aa7df5d95cf.hot-update.js 20.1 KiB
 cached modules 1.29 MiB [cached] 50 modules
 runtime modules 27.5 KiB 14 modules
-./src/ThoughtEntryZone.js 15.3 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 167 ms
+./src/ThoughtEntryZone.js 15.5 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 177 ms
 assets by status 1.98 KiB [cached] 1 asset
 assets by path *.js 1.48 MiB
   asset bundle.js 1.46 MiB [emitted] (name: main)
-  asset main.55a0f3b5fe92102f1067.hot-update.js 20.1 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.55a0f3b5fe92102f1067.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.55a0f3b5fe92102f1067.hot-update.js 20.1 KiB
-cached modules 1.29 MiB [cached] 50 modules
-runtime modules 27.5 KiB 14 modules
-./src/ThoughtEntryZone.js 15.4 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 125 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.48 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.cd3622d05e925f421537.hot-update.js 20.3 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.cd3622d05e925f421537.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.48 MiB = bundle.js 1.47 MiB main.cd3622d05e925f421537.hot-update.js 20.3 KiB
+  asset main.af7132cf4fcc074081ac.hot-update.js 20.2 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.af7132cf4fcc074081ac.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.af7132cf4fcc074081ac.hot-update.js 20.2 KiB
 cached modules 1.29 MiB [cached] 50 modules
 runtime modules 27.5 KiB 14 modules
 ./src/ThoughtEntryZone.js 15.6 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 73 ms
+webpack 5.99.9 compiled successfully in 88 ms
 assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.49 MiB
+assets by path *.js 1.48 MiB
   asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.aa9532ff44a20b49d52b.hot-update.js 20.4 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.aa9532ff44a20b49d52b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.49 MiB = bundle.js 1.47 MiB main.aa9532ff44a20b49d52b.hot-update.js 20.4 KiB
+  asset main.7db61100f5153451e754.hot-update.js 20.2 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.7db61100f5153451e754.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.47 MiB main.7db61100f5153451e754.hot-update.js 20.2 KiB
 cached modules 1.29 MiB [cached] 50 modules
 runtime modules 27.5 KiB 14 modules
 ./src/ThoughtEntryZone.js 15.7 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 98 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.48 MiB
-  asset bundle.js 1.46 MiB [emitted] (name: main)
-  asset main.926d2d850f5a26f5c18c.hot-update.js 20 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.926d2d850f5a26f5c18c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.926d2d850f5a26f5c18c.hot-update.js 20 KiB
-cached modules 1.29 MiB [cached] 50 modules
-runtime modules 27.5 KiB 14 modules
-./src/ThoughtEntryZone.js 15.4 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 74 ms
+webpack 5.99.9 compiled successfully in 95 ms

@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import "./ThoughtEntryZone.css";
 /**
  * Use audios from public/sounds with dynamic references.
- * Audio can be loaded using: new Audio(process.env.PUBLIC_URL + '/sounds/<filename>')
+ * Audio can be loaded using: new Audio(process.env.REACT_APP_PUBLIC_URL + '/sounds/<filename>')
+ * (For CRA, process.env.REACT_APP_PUBLIC_URL is preferred. If undefined, fallback to process.env.PUBLIC_URL.)
  */
 import EmotionalReframeCard from "./EmotionalReframeCard";
 
@@ -43,7 +44,11 @@ function ThoughtEntryZone() {
   useEffect(() => {
     // If ref does not yet have an Audio, set it once using public/sounds/wind-soft.mp3
     if (!windAudioRef.current) {
-      windAudioRef.current = new window.Audio(process.env.PUBLIC_URL + "/sounds/wind-soft.mp3");
+      const publicUrl =
+        process.env.REACT_APP_PUBLIC_URL ||
+        process.env.PUBLIC_URL ||
+        "";
+      windAudioRef.current = new window.Audio(publicUrl + "/sounds/wind-soft.mp3");
     }
     const windAudio = windAudioRef.current;
     windAudio.volume = 0.12 + 0.38 * bgStormLevel;
@@ -73,7 +78,11 @@ function ThoughtEntryZone() {
   // Whoosh particle sound must sync with first burst for realism
   function playWhoosh() {
     // Use static whoosh sound (create new each time to allow fast retriggers if needed)
-    const whoosh = new window.Audio(process.env.PUBLIC_URL + "/sounds/whoosh-1.mp3");
+    const publicUrl =
+      process.env.REACT_APP_PUBLIC_URL ||
+      process.env.PUBLIC_URL ||
+      "";
+    const whoosh = new window.Audio(publicUrl + "/sounds/whoosh-1.mp3");
     whoosh.volume = 0.54;
     whoosh.currentTime = 0;
     whoosh.play().catch(()=>{});
