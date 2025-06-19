@@ -1,0 +1,51 @@
+.journal-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0; left: 0;
+  height: 56px;
+  background: linear-gradient(97deg, #cbe8ff 1%, #b094f7 38%, #f7cac9 100%);
+  border-bottom: 1.3px solid #dbebf67a;
+  box-shadow: 0 1.5px 18px #bbb6e919;
+  display: flex;
+  align-items: center;
+  z-index: 120;
+  transition: background 0.6s;
+}
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.journal-logo {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.25em;
+  color: #707abb;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+.kaviaicon {
+  font-size: 1.32em;
+  margin-bottom: -2.5px;
+  filter: drop-shadow(0 1.5px 7.5px #c7f4f789);
+}
+.serenilux-title {
+  font-family: 'Pacifico','Caveat',cursive,sans-serif;
+  font-weight: 600;
+  font-size: 1.10em;
+  color: #bc63f4bb;
+  letter-spacing: .02em;
+  margin-right: 7px;
+  user-select: none;
+}
+@media (max-width: 599px) {
+  .journal-navbar { height: 41px; }
+  .nav-container { padding: 0 6px; }
+  .journal-logo { font-size: 1.05em; }
+  .serenilux-title { font-size: 0.98em;}
+}

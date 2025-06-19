@@ -1,48 +1,74 @@
 import React, { useState } from 'react';
 import './App.css';
 import WelcomeScreen from "./WelcomeScreen";
-import ThoughtEntryZone from "./ThoughtEntryZone";
+// Our new serene journaling interface
+import JournalCard from "./JournalCard";
+import AnimatedParticles from "./AnimatedParticles";
+import MusicPlayer from "./MusicPlayer";
+import JournalNav from "./JournalNav";
 
+// PUBLIC_INTERFACE
 function App() {
-  // Manage screen state; future: swap WelcomeScreen for main app after Start Detox
+  // State: Show welcome, then show journaling interface
   const [showWelcome, setShowWelcome] = useState(true);
 
-  const handleStart = () => {
-    setShowWelcome(false);
-    // Transition to main experience
+  // State: journal input, edit mode, show quote, shredding effect
+  const [input, setInput] = useState("");
+  const [editMode, setEditMode] = useState(false);
+  const [showQuote, setShowQuote] = useState(false);
+  const [shredding, setShredding] = useState(false);
+
+  // Handle transition from Welcome to Journal
+  const handleStart = () => setShowWelcome(false);
+
+  // Handle text shred (after paper burn)
+  const handleShred = () => {
+    setInput("");
+    setEditMode(false);
+    setShowQuote(true);
+    // Hide quote again after a while
+    setTimeout(() => setShowQuote(false), 4400);
+  };
+
+  const handleToggleEdit = () => {
+    if (!shredding) setEditMode((v) => !v);
   };
 
   return (
     <div className="app">
-      {/* Animated flowing gradient background */}
+      {/* Animated gradient background */}
       <div className="animated-bg-gradient" aria-hidden="true" />
+      {/* Calm animated floating sparkles */}
+      <AnimatedParticles />
+      {/* Background music player (top right) */}
+      {!showWelcome && <MusicPlayer />}
       {showWelcome ? (
         <WelcomeScreen onStart={handleStart} />
       ) : (
         <>
-        {/* Main app UI here */}
-        <nav className="navbar">
-          <div className="container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-              <div className="logo">
-                <span className="logo-symbol">*</span> KAVIA AI
-              </div>
-              <button className="btn">Template Button</button>
-            </div>
-          </div>
-        </nav>
-        {/* Main app UI */}
-        <main style={{ minHeight: "100vh" }}>
-          {/* Thought Entry Zone replaces hero UI */}
-          <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
-            <React.Suspense fallback={null}>
-              {/*
-                The ThoughtEntryZone component handles its own centering and backdrop.
-              */}
-              <ThoughtEntryZone />
-            </React.Suspense>
-          </div>
-        </main>
+          <JournalNav />
+          <main
+            style={{
+              minHeight: "100vh",
+              width: "100vw",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <JournalCard
+              placeholder="Type what’s bothering you…"
+              value={input}
+              onChange={setInput}
+              onShred={handleShred}
+              editMode={editMode}
+              onToggleEdit={handleToggleEdit}
+              quote="Let it go. You’ve taken the first step."
+              showQuote={showQuote}
+              shredding={shredding}
+              setShredding={setShredding}
+            />
+          </main>
         </>
       )}
     </div>

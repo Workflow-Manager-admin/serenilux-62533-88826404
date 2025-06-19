@@ -1,0 +1,49 @@
+.music-toggle-wrap {
+  position: fixed;
+  top: 24px;
+  right: 22px;
+  z-index: 102;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.music-btn {
+  background: linear-gradient(99deg,#B494E8 6%, #50E3C2 70%, #F5A623 100%);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 3px 22px 0 #cdf5ee90, 0 2px 10px #b6affc6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1.6em #c5eaff72);
+  transition: background 0.28s, box-shadow 0.33s, filter 0.4s;
+  outline: none;
+  margin-top: 0;
+}
+.music-btn.muted {
+  opacity: 0.69;
+  background: linear-gradient(97deg, #c9dae4 0%, #cbacf8 100%);
+  filter: grayscale(0.18) blur(0.3px) brightness(0.93);
+}
+.music-icon {
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 2.0px 7.4px #eaf6fa77);
+  transition: filter 0.48s;
+}
+.music-icon.pulse {
+  animation: music-pulse 2.1s infinite cubic-bezier(.53,1.4,.38,0.97);
+}
+@keyframes music-pulse {
+  0%,100% { filter: drop-shadow(0 2px 7px #e3f8f1da);}
+  56% { filter: drop-shadow(0 8px 31px #88fff899);}
+}
+@media (max-width:599px) {
+  .music-toggle-wrap {
+    top: 10px; right: 7px;
+  }
+  .music-btn { width: 38px; height: 38px; }
+}
