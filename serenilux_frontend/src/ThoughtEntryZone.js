@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./ThoughtEntryZone.css";
-import windSoft from "./assets/wind-soft.mp3";
-import whooshSoundAsset from "./assets/whoosh-1.mp3"; // Provide as asset
+/**
+ * Use audios from public/sounds with dynamic references.
+ * Audio can be loaded using: new Audio(process.env.PUBLIC_URL + '/sounds/<filename>')
+ */
 import EmotionalReframeCard from "./EmotionalReframeCard";
 
 // PUBLIC_INTERFACE
@@ -18,6 +20,7 @@ function ThoughtEntryZone() {
   // New: Control Emotional Reframe Card appearance
   const [showReframe, setShowReframe] = useState(false);
 
+  // Remove unused import-based refs, use dynamically constructed Audio objects for sound playback
   const windAudioRef = useRef(null);
   const whooshAudioRef = useRef(null);
   const textareaRef = useRef(null);
@@ -38,16 +41,21 @@ function ThoughtEntryZone() {
 
   // Handle the ambient wind audio volume effect
   useEffect(() => {
-    if (windAudioRef.current) {
-      windAudioRef.current.volume = 0.12 + 0.38 * bgStormLevel;
-      if (input.length > 0 && !shredding) {
-        windAudioRef.current.loop = true;
-        if (windAudioRef.current.paused) windAudioRef.current.play().catch(()=>{});
-      } else {
-        windAudioRef.current.pause();
-        windAudioRef.current.currentTime = 0;
-      }
+    // If ref does not yet have an Audio, set it once using public/sounds/wind-soft.mp3
+    if (!windAudioRef.current) {
+      windAudioRef.current = new window.Audio(process.env.PUBLIC_URL + "/sounds/wind-soft.mp3");
     }
+    const windAudio = windAudioRef.current;
+    windAudio.volume = 0.12 + 0.38 * bgStormLevel;
+    if (input.length > 0 && !shredding) {
+      windAudio.loop = true;
+      if (windAudio.paused) windAudio.play().catch(()=>{});
+    } else {
+      windAudio.pause();
+      windAudio.currentTime = 0;
+    }
+    // Cleanup on component unmount
+    return () => { windAudio.pause(); windAudio.currentTime = 0; };
   }, [input, bgStormLevel, shredding]);
 
   // For accessibility - focus textarea on mount (but not during shred)
@@ -64,11 +72,11 @@ function ThoughtEntryZone() {
 
   // Whoosh particle sound must sync with first burst for realism
   function playWhoosh() {
-    if (whooshAudioRef.current) {
-      whooshAudioRef.current.currentTime = 0;
-      whooshAudioRef.current.volume = 0.54;
-      whooshAudioRef.current.play().catch(()=>{});
-    }
+    // Use static whoosh sound (create new each time to allow fast retriggers if needed)
+    const whoosh = new window.Audio(process.env.PUBLIC_URL + "/sounds/whoosh-1.mp3");
+    whoosh.volume = 0.54;
+    whoosh.currentTime = 0;
+    whoosh.play().catch(()=>{});
   }
 
   // Particle data generation for the shred
@@ -227,8 +235,7 @@ function ThoughtEntryZone() {
         transition: "filter 0.40s cubic-bezier(.44,.82,.47,1), background 0.64s cubic-bezier(.52,1.4,.76,.95)",
       }}
     >
-      <audio src={windSoft} ref={windAudioRef} preload="auto" />
-      <audio src={whooshSoundAsset} ref={whooshAudioRef} preload="auto" />
+      {/* Audio playback handled via new Audio(process.env.PUBLIC_URL + ...) so no <audio> tags needed for these sounds */}
       {/* Shred particle canvas overlay */}
       <canvas
         ref={shredCanvasRef}

@@ -41,4 +41,54 @@ You may need an appropriate loader to handle this file type, currently no loader
  @ ./src/App.js 4:0-50 63:40-56
  @ ./src/index.js 5:0-24 11:32-35
 
-webpack 5.99.9 compiled with 2 errors in 1381 ms
+webpack 5.99.9 compiled with 2 errors in 1453 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.d77436d22533c634e002.hot-update.js 20 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.d77436d22533c634e002.hot-update.json 84 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.d77436d22533c634e002.hot-update.js 20 KiB
+cached modules 1.29 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/ThoughtEntryZone.js 15.3 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 167 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.55a0f3b5fe92102f1067.hot-update.js 20.1 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.55a0f3b5fe92102f1067.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.55a0f3b5fe92102f1067.hot-update.js 20.1 KiB
+cached modules 1.29 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/ThoughtEntryZone.js 15.4 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 125 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.47 MiB [emitted] (name: main)
+  asset main.cd3622d05e925f421537.hot-update.js 20.3 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.cd3622d05e925f421537.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.47 MiB main.cd3622d05e925f421537.hot-update.js 20.3 KiB
+cached modules 1.29 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/ThoughtEntryZone.js 15.6 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 73 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.49 MiB
+  asset bundle.js 1.47 MiB [emitted] (name: main)
+  asset main.aa9532ff44a20b49d52b.hot-update.js 20.4 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.aa9532ff44a20b49d52b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.47 MiB main.aa9532ff44a20b49d52b.hot-update.js 20.4 KiB
+cached modules 1.29 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/ThoughtEntryZone.js 15.7 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 98 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.48 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.926d2d850f5a26f5c18c.hot-update.js 20 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.926d2d850f5a26f5c18c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.48 MiB = bundle.js 1.46 MiB main.926d2d850f5a26f5c18c.hot-update.js 20 KiB
+cached modules 1.29 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/ThoughtEntryZone.js 15.4 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 74 ms
