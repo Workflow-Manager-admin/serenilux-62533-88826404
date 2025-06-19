@@ -42,13 +42,9 @@ function ThoughtEntryZone() {
 
   // Handle the ambient wind audio volume effect
   useEffect(() => {
-    // If ref does not yet have an Audio, set it once using public/sounds/wind-soft.mp3
+    // Set Audio ref once with direct static path for portability
     if (!windAudioRef.current) {
-      const publicUrl =
-        process.env.REACT_APP_PUBLIC_URL ||
-        process.env.PUBLIC_URL ||
-        "";
-      windAudioRef.current = new window.Audio(publicUrl + "/sounds/wind-soft.mp3");
+      windAudioRef.current = new window.Audio("/sounds/wind-soft.mp3");
     }
     const windAudio = windAudioRef.current;
     windAudio.volume = 0.12 + 0.38 * bgStormLevel;
@@ -78,11 +74,7 @@ function ThoughtEntryZone() {
   // Whoosh particle sound must sync with first burst for realism
   function playWhoosh() {
     // Use static whoosh sound (create new each time to allow fast retriggers if needed)
-    const publicUrl =
-      process.env.REACT_APP_PUBLIC_URL ||
-      process.env.PUBLIC_URL ||
-      "";
-    const whoosh = new window.Audio(publicUrl + "/sounds/whoosh-1.mp3");
+    const whoosh = new window.Audio("/sounds/whoosh-1.mp3");
     whoosh.volume = 0.54;
     whoosh.currentTime = 0;
     whoosh.play().catch(()=>{});
