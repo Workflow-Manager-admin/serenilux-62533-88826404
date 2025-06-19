@@ -7,14 +7,14 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.44 MiB [emitted] (name: main)
+asset bundle.js 1.47 MiB [emitted] (name: main)
 asset index.html 1.98 KiB [emitted]
 runtime modules 27.5 KiB 14 modules
-cacheable modules 1.3 MiB
+cacheable modules 1.31 MiB
   modules by path ./node_modules/ 1.24 MiB 31 modules
-  modules by path ./src/ 42.7 KiB
-    modules by path ./src/*.css 20.7 KiB 8 modules
-    modules by path ./src/*.js 21.9 KiB 4 modules
+  modules by path ./src/ 55.4 KiB
+    modules by path ./src/*.css 27.9 KiB 10 modules
+    modules by path ./src/*.js 27.4 KiB 5 modules
     modules with errors 111 bytes [true errors]
       ./src/assets/wind-soft.mp3 81 bytes [built] [code generated] [1 error]
       ./src/assets/whoosh-1.mp3 30 bytes [built] [code generated] [1 error]
@@ -22,77 +22,6 @@ cacheable modules 1.3 MiB
     modules by path ./.ve/*.js 10.6 KiB 2 modules
     modules by path ./.ve/*.css 2.93 KiB 2 modules
     ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-
-ERROR in ./src/assets/whoosh-1.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <PLACEHOLDER_WHOOSH_MP3_DATA>
-| 
- @ ./src/ThoughtEntryZone.js 4:0-53 234:11-27
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-ERROR in ./src/assets/wind-soft.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <binary placeholder: gentle looping wind sound for ambient effect as user types>
-| 
- @ ./src/ThoughtEntryZone.js 3:0-46 229:11-19
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-webpack 5.99.9 compiled with 2 errors in 1451 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.51 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.e5a905cfe8818ff95b9b.hot-update.js 41.8 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.e5a905cfe8818ff95b9b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.51 MiB = bundle.js 1.47 MiB main.e5a905cfe8818ff95b9b.hot-update.js 41.8 KiB
-cached modules 1.28 MiB [cached] 47 modules
-runtime modules 27.5 KiB 14 modules
-javascript modules 27.2 KiB
-  code generated modules 27.1 KiB [code generated]
-    modules by path ./src/*.js 19.9 KiB
-      ./src/ThoughtEntryZone.js 14.9 KiB [built] [code generated]
-      ./src/EmotionalReframeCard.js 4.96 KiB [built] [code generated]
-    modules by path ./src/*.css 7.2 KiB
-      ./src/EmotionalReframeCard.css 2.27 KiB [built] [code generated]
-      ./node_modules/css-loader/dist/cjs.js!./src/EmotionalReframeCard.css 4.93 KiB [built] [code generated]
-  modules with errors 111 bytes [true errors]
-    ./src/assets/wind-soft.mp3 81 bytes [built] [1 error]
-    ./src/assets/whoosh-1.mp3 30 bytes [built] [1 error]
-
-ERROR in ./src/assets/whoosh-1.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <PLACEHOLDER_WHOOSH_MP3_DATA>
-| 
- @ ./src/ThoughtEntryZone.js 4:0-53 238:11-27
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-ERROR in ./src/assets/wind-soft.mp3 1:0
-Module parse failed: Unexpected token (1:0)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
-> <binary placeholder: gentle looping wind sound for ambient effect as user types>
-| 
- @ ./src/ThoughtEntryZone.js 3:0-46 233:11-19
- @ ./src/App.js 4:0-50 63:40-56
- @ ./src/index.js 5:0-24 11:32-35
-
-webpack 5.99.9 compiled with 2 errors in 236 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.49 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.5c42c88d8919c10cc12e.hot-update.js 20.6 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.5c42c88d8919c10cc12e.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.49 MiB = bundle.js 1.47 MiB main.5c42c88d8919c10cc12e.hot-update.js 20.6 KiB
-cached modules 1.29 MiB [cached] 50 modules
-runtime modules 27.5 KiB 14 modules
-javascript modules 15.4 KiB
-  ./src/ThoughtEntryZone.js 15.2 KiB [built] [code generated]
-  ./src/assets/wind-soft.mp3 81 bytes [built] [1 error]
-  ./src/assets/whoosh-1.mp3 30 bytes [built] [1 error]
 
 ERROR in ./src/assets/whoosh-1.mp3 1:0
 Module parse failed: Unexpected token (1:0)
@@ -112,4 +41,4 @@ You may need an appropriate loader to handle this file type, currently no loader
  @ ./src/App.js 4:0-50 63:40-56
  @ ./src/index.js 5:0-24 11:32-35
 
-webpack 5.99.9 compiled with 2 errors in 102 ms
+webpack 5.99.9 compiled with 2 errors in 1381 ms
