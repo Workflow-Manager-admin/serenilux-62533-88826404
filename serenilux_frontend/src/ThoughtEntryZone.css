@@ -11,6 +11,39 @@
   overflow: hidden;
 }
 
+.shred-canvas {
+  /* overlay for particle animation */
+  pointer-events: none !important;
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100vw !important; height: 100vh !important;
+  max-width: 100vw !important; max-height: 100vh !important;
+  z-index: 49;
+  background: transparent !important;
+  transition: opacity 0.8s;
+  will-change: opacity, transform;
+  opacity: 1;
+}
+
+.tezone-disabled {
+  pointer-events: none;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.67 !important;
+  background: #ccc !important;
+  color: #6e7999 !important;
+  pointer-events: none;
+  filter: grayscale(0.48) blur(0.8px) brightness(0.92) !important;
+}
+
+@media (max-width: 599px) {
+  .shred-canvas {
+    width: 100vw !important; height: 100vh !important;
+  }
+}
+
 .tezone-card {
   display: flex;
   flex-direction: column;
